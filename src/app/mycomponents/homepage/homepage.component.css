@@ -1,0 +1,116 @@
+/* @font-face {
+    font-family: 'heading';
+    src: url(../../../assets/font/Rye-Regular.ttf);
+   }
+
+@font-face {
+    font-family: 'heading2';
+    src: url(../../../assets/font/Staatliches-Regular.ttf);
+} */
+
+.homepage-container{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* p{
+    font-family: heading;
+} */
+
+.homepage-pic-blend {
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #6600FF;
+    /* background-image: linear-gradient(to bottom, #6600ff, rgba(255, 255, 255, 0)); */
+    mix-blend-mode:lighten;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.homepage-pic-gradient {
+    z-index: 2;
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to top, #6600ff, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.homepage-pic {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../../../assets/img/eduardo-soares-utWyPB8_FU8-unsplash.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.homepage-wave {
+    height: 250px;
+    overflow: hidden;
+}
+.homepage-heading {
+    position: relative;
+    font-family: heading2;
+    font-weight: 300;
+    font-size: 140px;
+    top: 100px;
+    left: 150px;
+}
+
+.homepage-subheading {
+    position: relative;
+    font-family: heading2;
+    font-weight: 400;
+    font-size: 48px;
+    top: 50px;
+    left: 252px;
+}
+
+/* cta */
+.cta{
+    position: relative;
+    top: 100px;
+    left: 500px;
+}
+
+.cta1{
+    border-radius: 0%;
+    border: 2px solid white;
+    font-size: 26px;
+}
+.cta1:hover{
+    border-radius: 0%;
+    border: 2px solid white;
+    color:#6600FF;
+}
+.cta2{
+    margin-left: 15px;
+    border-radius: 0%;
+    border: 2px solid white;
+    color:#6600FF;
+    font-size: 26px;
+}
+.cta2:hover{
+    margin-left: 15px;
+    border-radius: 0%;
+    color: #6600FF;
+    background: #ffffff;
+    border: 2px solid #6600FF;
+    box-shadow: inset -2px -1px 0px 2px #6600FF;
+}
+
+.alert {
+    margin-top: 70px;
+    z-index: 100;
+    left: 5vw;
+    right: 5vw;
+    width: 90vw;
+    height: 10vh;
+}

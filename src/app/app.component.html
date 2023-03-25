@@ -1,0 +1,98 @@
+<!-- main body -->
+<div class="container-fluid main-body px-0">
+
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top shadow-lg bg-white">
+  <div class="container">
+    <a class="navbar-brand fs-small fw-bold text-muted" href="#"><span class="highlight heading h4"><i
+          class="fa-solid fa-building-columns"></i>Bank</span>ManagementSystem</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active-link px-3" aria-current="page" href="#"><i class="fa-solid fa-house me-1"></i>Home</a>
+        </li>
+
+        <!-- user dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-users me-1"></i>User
+          </a>
+          <ul class="dropdown-menu bg-p rounded-0">
+            <li><a class="dropdown-item" href="#create-user">Create Account</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#balanceInquiry">Balance Inquiry</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#deposite">Deposite</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#withdraw">Withdraw</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#changePin">Change Pin</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#userDeactivateAccount">Deactivate A/c.</a></li>
+          </ul>
+        </li>
+
+        <!-- Employee dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-user-tie me-1"></i>Employee
+          </a>
+          <ul class="dropdown-menu bg-p rounded-0">
+            <li><a class="dropdown-item" href="#create-employee">Create Employee Account</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#fetchAllUsers">Get All Bank Users</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#empChangePassword">Rest A/c. Password</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#empDeactivateAccount">Deactivate Employee A/c.</a></li>
+          </ul>
+        </li>
+
+        <!-- Manager dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-user-shield me-1"></i>Manager
+          </a>
+          <ul class="dropdown-menu bg-p rounded-0">
+            <li><a class="dropdown-item" href="#create-manager">Create Manager Account</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#managerFetchAllUsers">Get All Bank Users</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#managerFetchAllEmps">Get All Bank Employees</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#managerChangePassword">Reset A/c. Password</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#managerDeactivateUser">Deactivate User A/c.</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#managerDeactivateEmp">Deactivate Employee A/c.</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#managerDeactivateAccount">Deactivate Manager A/c.</a></li>
+          </ul>
+        </li>
+
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+<!-- body -->
+<div class="container-fluid main-body px-0">
+
+  <!-- gradient animation bg image -->
+  <div class="bg-div p-0">
+    <img src="../assets/img/blurry-gradient-haikei (3).svg" class="bg-1">
+    <img src="../assets/img/blurry-gradient-haikei (2).svg" class="bg-2">
+    <img src="../assets/img/blurry-gradient-haikei (1).svg" class="bg-3">
+  </div>
+
+  <!-- components -->
+
+  <app-homepage></app-homepage>
+
+
+</div>
+
+<!-- footer -->
+<footer class="footer bottom-0">
+  <div class="container copyright">
+    <span> Copyright © 2022, <a routerLink="homepage"
+        class="font-monospace link-info text-decoration-none">BankManagementSystem</a> - All rights reserved.</span>
+  </div>
+
+  <div class="container-fluid designedBy my-auto">
+    <span class="my-auto designedBy-span">Designed by- <span class="text-info">Akash Singh</span></span>
+  </div>
+</footer>
+</div>

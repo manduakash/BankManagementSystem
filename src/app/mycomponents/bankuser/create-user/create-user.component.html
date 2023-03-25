@@ -1,0 +1,98 @@
+<div class="container bg-white rounded-0 mb-0 py-5 px-3">
+
+    <div class="font-monospace col-12">
+        <h1 class="text-center text-muted fw-bolder display-1"><i class="fa-solid fa-circle-user text-info"></i></h1>
+        <h2 class="font-monospace text-center text-muted fw-bolder display-5">CREATE BANK USER ACCOUNT</h2>
+        <div class="underline border border-5 border-bottom border-info w-50 mx-auto"></div>
+        <div class="underline border border-2 border-bottom border-info"></div>
+    </div>
+    <form (ngSubmit)="createUser()">
+        <!-- accountNo -->
+        <div class="row mb-3 mt-5 form-group my-3 col-10 mx-auto text-muted font-monospace">
+            <label class="col-sm-4 col-form-label"><i class="fa-solid fa-money-check me-1 text-p"></i>
+                Account Number <br><span class="ms-4 fs-small">(10 digits)</span></label>
+            <div class="col-sm-8">
+                <input [(ngModel)]="user.accountNo" type="text" class="form-control shadow font-monospace rounded-0"
+                name="accountNo" placeholder="Enter Account Number Here">
+            </div>
+        </div>
+        <!-- accountHolder -->
+        <div class="row mb-3 mt-5 form-group my-3 col-10 mx-auto text-muted font-monospace">
+            <label class="col-sm-4 col-form-label"><i class="fa-regular fa-id-card me-1 text-p"></i>
+                Account Holder Name</label>
+            <div class="col-sm-8">
+                <input [(ngModel)]="user.accountHolder" type="text" class="form-control shadow font-monospace rounded-0"
+                name="accountHolder" placeholder="Enter Account Holder Name Here">
+            </div>
+        </div>
+        <!-- accountType -->
+        <div class="row mb-3 mt-5 form-group my-3 col-10 mx-auto text-muted font-monospace">
+            <label class="col-sm-4 col-form-label"><i class="fa-solid fa-money-check-dollar me-1 text-p"></i>
+                Account Type</label>
+                <div class="check-box col-sm-8" id="accountType">
+                    <div class="form-check form-check-inline col-sm-4 me-5 my-2">
+                        <input [(ngModel)]="user.accountType" class="form-check-input" type="radio" name="accountType" id="accountTypeSaving" value="saving">
+                        <label for="accountTypeSaving" class="form-check-label">Saving Account</label>
+                    </div>
+                    <div class="form-check form-check-inline col-sm-4 ms-5 my-2">
+                        <input [(ngModel)]="user.accountType" class="form-check-input" type="radio" id="accountTypeCurrent" name="accountType" value="current">
+                        <label for="accountTypeCurrent" class="form-check-label">Current Account</label>
+                    </div>
+                </div>
+        </div>
+        <!-- branch -->
+        <div class="row mb-3 mt-5 form-group my-3 col-10 mx-auto text-muted font-monospace">
+            <label class="col-sm-4 col-form-label"><i class="fa-solid fa-building-columns me-1 text-p"></i>
+                Bank Branch Name</label>
+            <div class="col-sm-8">
+                <input [(ngModel)]="user.branch" type="text" class="form-control shadow font-monospace rounded-0"
+                name="branch" placeholder="Enter Bank Branch Name Here">
+            </div>
+        </div>
+        <!-- pin -->
+        <div class="row mb-3 mt-5 form-group my-3 col-10 mx-auto text-muted font-monospace">
+            <label class="col-sm-4 col-form-label"><i class="fa-solid fa-lock me-1 text-p"></i>
+                Account Pin <br><span class="ms-4 fs-small">(4 digits)</span> </label>
+            <div class="col-sm-8">
+                <input [(ngModel)]="user.pin" type="text" class="form-control shadow font-monospace rounded-0"
+                name="pin" placeholder="Enter Account Pin Here">
+            </div>
+        </div>
+        <!-- email -->
+        <div class="row mb-3 mt-5 form-group my-3 col-10 mx-auto text-muted font-monospace">
+            <label class="col-sm-4 col-form-label"><i class="fa-solid fa-envelope me-1 text-p"></i>
+                Email id </label>
+            <div class="col-sm-8">
+                <input [(ngModel)]="user.email" type="text" class="form-control shadow font-monospace rounded-0"
+                name="email" placeholder="Enter Account Holder's Email id Here">
+            </div>
+        </div>
+        <!-- contact -->
+        <div class="row mb-3 mt-5 form-group my-3 col-10 mx-auto text-muted font-monospace">
+            <label class="col-sm-4 col-form-label"><i class="fa-solid fa-phone me-1 text-p"></i>
+                Contact Number <br><span class="ms-4 fs-small">(10 digits)</span> </label>
+            <div class="col-sm-8">
+                <input [(ngModel)]="user.contact" type="text" class="form-control shadow font-monospace rounded-0"
+                name="contact" placeholder="Enter Account Holder's Contact Number Here">
+            </div>
+        </div>
+        <!-- balance -->
+        <div class="row mb-3 mt-5 form-group my-3 col-10 mx-auto text-muted font-monospace">
+            <label class="col-sm-4 col-form-label"><i class="fa-solid fa-sack-dollar me-1 text-p"></i>
+                Deposite Amount <br><span class="ms-4 fs-small">(only digits)</span> </label>
+            <div class="col-sm-8">
+                <input [(ngModel)]="user.balance" type="text" class="form-control shadow font-monospace rounded-0"
+                name="balance" placeholder="Enter Deposite Amount Here">
+            </div>
+        </div>
+
+
+        <div class="d-grid col-3 mx-auto my-5">
+            <button type="submit" class="font-monospace btn-shadow text-decoration-none text-center"><i class="fa-solid fa-user-plus me-2"></i>CREATE USER ACCOUNT</button>
+        </div>
+    </form>
+</div>
+<!-- wave -->
+<div class="wave mt-0 py-0 w-100"><img class="w-100" src="../../../../assets/img/wavesOpacityWhite.svg"></div>
+
+

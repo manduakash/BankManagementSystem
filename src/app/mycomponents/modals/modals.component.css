@@ -1,0 +1,17 @@
+.btn-modal {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background: #6600FF;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.btn-modal:hover {
+    background-color: #fff;
+    color: #6600FF;
+    font-weight: bolder;
+    box-shadow: 2px 2px 15px 5px rgb(211, 211, 211);
+    border: 1px solid #fff;
+}

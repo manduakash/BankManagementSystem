@@ -1,0 +1,569 @@
+<!-- Button trigger modal -->
+<!-- data-bs-toggle="modal" data-bs-target="#verifyUser" -->
+
+
+<!-- ---------------------------- USER MODALS ------------------------------------- -->
+
+<!-- balanceInquiry -->
+<div class="modal fade modal-auto-clear"  id="balanceInquiry" tabindex="-1" aria-labelledby="balanceInquiry" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-p">
+      <div class="modal-header">
+        <h1 class="modal-title fs-2 fw-bold font-monospace">BALANCE INQUIRY</h1>
+        <button type="button" class="btn-close btn-close-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="balanceInquiry(user.accountNo, user.pin)">
+          <div class="col-12 my-4">
+            <label class="form-label">Bank Account Number (10 digits)</label>
+            <input [(ngModel)]="user.accountNo" type="text" class="form-control rounded-0" name="accountNo"
+              placeholder="Enter 10 Digit A/c. No. Here">
+          </div>
+          <div class="col-12 my-4">
+            <label class="form-label">Bank Account Pin (4 digits)</label>
+            <input [(ngModel)]="user.pin" type="password" class="form-control rounded-0" name="pin"
+              placeholder="Enter 4 Digit Pin Here">
+          </div>
+          <div class="modal-footer mt-3 justify-content-center">
+            <button type="submit" class="btn btn-info bg-p rounded-0 text-center text-light px-5" data-bs-dismiss="modal"><i
+                class="bi bi-trash-fill me-2"></i>Check Balance</button>
+            <button type="button" class="btn btn-secondary rounded-0 px-5" data-bs-dismiss="modal"><i
+                class="bi bi-x-circle me-2"></i>Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- deposite -->
+<div class="modal fade modal-auto-clear"  id="deposite" tabindex="-1" aria-labelledby="deposite" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-p">
+      <div class="modal-header">
+        <h1 class="modal-title fs-2 fw-bold font-monospace">DEPOSITE MONEY</h1>
+        <button type="button" class="btn-close btn-close-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="deposite(user.accountNo, user.pin, updatedUser)">
+          <div class="col-12 my-4">
+            <label class="form-label">Bank Account Number (10 digits)</label>
+            <input [(ngModel)]="user.accountNo" type="text" class="form-control rounded-0" name="accountNo"
+              placeholder="Enter 10 Digit A/c. No. Here">
+          </div>
+          <div class="col-12 my-4">
+            <label class="form-label">Bank Account Pin (4 digits)</label>
+            <input [(ngModel)]="user.pin" type="password" class="form-control rounded-0" name="pin"
+              placeholder="Enter 4 Digit Pin Here">
+          </div>
+          <div class="col-12 my-4">
+            <label class="form-label">Deposite amount</label>
+            <input [(ngModel)]="updatedUser.balance" type="text" class="form-control rounded-0" name="balance"
+              placeholder="Enter Deposite Amount Here">
+          </div>
+          <div class="modal-footer mt-3 justify-content-center">
+            <button type="submit" class="btn btn-info bg-p rounded-0 text-center text-light px-5" data-bs-dismiss="modal"><i
+                class="bi bi-trash-fill me-2"></i>Deposite</button>
+            <button type="button" class="btn btn-secondary rounded-0 px-5" data-bs-dismiss="modal"><i
+                class="bi bi-x-circle me-2"></i>Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- withdraw -->
+<div class="modal fade modal-auto-clear"  id="withdraw" tabindex="-1" aria-labelledby="withdraw" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-p">
+      <div class="modal-header">
+        <h1 class="modal-title fs-2 fw-bold font-monospace">WITHDRAW MONEY</h1>
+        <button type="button" class="btn-close btn-close-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="withdraw(user.accountNo, user.pin, updatedUser)">
+          <div class="col-12 my-4">
+            <label class="form-label">Bank Account Number (10 digits)</label>
+            <input [(ngModel)]="user.accountNo" type="text" class="form-control rounded-0" name="accountNo"
+              placeholder="Enter 10 Digit A/c. No. Here">
+          </div>
+          <div class="col-12 my-4">
+            <label class="form-label">Bank Account Pin (4 digits)</label>
+            <input [(ngModel)]="user.pin" type="password" class="form-control rounded-0" name="pin"
+              placeholder="Enter 4 Digit Pin Here">
+          </div>
+          <div class="col-12 my-4">
+            <label class="form-label">Withdraw amount</label>
+            <input [(ngModel)]="updatedUser.balance" type="text" class="form-control rounded-0" name="balance"
+              placeholder="Enter Withdraw Amount Here">
+          </div>
+          <div class="modal-footer mt-3 justify-content-center">
+            <button type="submit" class="btn btn-info bg-p rounded-0 text-center text-light px-5" data-bs-dismiss="modal"><i
+                class="bi bi-trash-fill me-2"></i>Withdraw</button>
+            <button type="button" class="btn btn-secondary rounded-0 px-5" data-bs-dismiss="modal"><i
+                class="bi bi-x-circle me-2"></i>Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- change pin -->
+<div class="modal fade modal-auto-clear"  id="changePin" tabindex="-1" aria-labelledby="changePin" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-p">
+      <div class="modal-header">
+        <h1 class="modal-title fs-2 fw-bold font-monospace">RESET YOUR PIN</h1>
+        <button type="button" class="btn-close btn-close-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="changePin(user.accountNo, user.pin, updatedUser)">
+          <div class="col-12 my-4">
+            <label class="form-label">Bank Account Number (10 digits)</label>
+            <input [(ngModel)]="user.accountNo" type="text" class="form-control rounded-0" name="accountNo"
+              placeholder="Enter 10 Digit A/c. No. Here">
+          </div>
+          <div class="col-12 my-4">
+            <label class="form-label">Old Pin (4 digits)</label>
+            <input [(ngModel)]="user.pin" type="password" class="form-control rounded-0" name="pin"
+              placeholder="Enter Your Old 4 Digit Pin Here">
+          </div>
+          <div class="col-12 my-4">
+            <label class="form-label">New Pin (4 digits)</label>
+            <input [(ngModel)]="updatedUser.pin" type="password" class="form-control rounded-0" name="pin"
+              placeholder="Enter Your New 4 Digit Pin Here">
+          </div>
+          <div class="modal-footer mt-3 justify-content-center">
+            <button type="submit" class="btn btn-info bg-p rounded-0 text-center text-light px-5" data-bs-dismiss="modal"><i
+                class="bi bi-trash-fill me-2"></i>Change Pin</button>
+            <button type="button" class="btn btn-secondary rounded-0 px-5" data-bs-dismiss="modal"><i
+                class="bi bi-x-circle me-2"></i>Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- delete user account -->
+<div class="modal fade modal-auto-clear"  id="userDeactivateAccount" tabindex="-1" aria-labelledby="userDeactivateAccount" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-p">
+      <div class="modal-header">
+        <h1 class="modal-title fs-2 fw-bold font-monospace">DEACTIVATE USER ACCOUNT</h1>
+        <button type="button" class="btn-close btn-close-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="deactivateAccount(user.accountNo, user.pin)">
+          <div class="col-12 my-4">
+            <label class="form-label">Bank Account Number (10 digits)</label>
+            <input [(ngModel)]="user.accountNo" type="text" class="form-control rounded-0" name="accountNo"
+              placeholder="Enter 10 Digit A/c. No. Here">
+          </div>
+          <div class="col-12 my-4">
+            <label class="form-label">Old Pin (4 digits)</label>
+            <input [(ngModel)]="user.pin" type="password" class="form-control rounded-0" name="pin"
+              placeholder="Enter Your Old 4 Digit Pin Here">
+          </div>
+          <div class="col-12 my-4">
+            <label class="form-label">New Pin (4 digits)</label>
+            <input [(ngModel)]="updatedUser.pin" type="password" class="form-control rounded-0" name="pin"
+              placeholder="Enter Your New 4 Digit Pin Here">
+          </div>
+          <div class="modal-footer mt-3 justify-content-center">
+            <button type="button" class="btn btn-secondary rounded-0 px-5" data-bs-dismiss="modal"><i
+              class="bi bi-x-circle me-2"></i>Cancel</button>
+            <button type="submit" class="btn btn-danger bg-p rounded-0 text-center text-light px-5" data-bs-dismiss="modal"><i
+                class="bi bi-trash-fill me-2"></i>Deactivate</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ---------------------------- EMPLOYEE MODALS ------------------------------------- -->
+<!-- fetchAllUsers -->
+<div class="modal fade modal-auto-clear"  id="fetchAllUsers" tabindex="-1" aria-labelledby="fetchAllUsers" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-p">
+      <div class="modal-header">
+        <h1 class="modal-title fs-2 fw-bold font-monospace">GET ALL BANK USERS</h1>
+        <button type="button" class="btn-close btn-close-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="fetchAllUsers(emp.empUsername, emp.password)">
+          <div class="col-12 my-4">
+            <label class="form-label">Employee Username</label>
+            <input [(ngModel)]="emp.empUsername" type="text" class="form-control rounded-0" name="username"
+              placeholder="Enter 10 Digit A/c. No. Here">
+          </div>
+          <div class="col-12 my-4">
+            <label class="form-label">Employee Password</label>
+            <input [(ngModel)]="emp.password" type="password" class="form-control rounded-0" name="password"
+              placeholder="Enter 4 Digit Pin Here">
+          </div>
+          <div class="modal-footer mt-3 justify-content-center">
+            <button type="submit" class="btn btn-info bg-p rounded-0 text-center text-light px-5" data-bs-dismiss="modal"><i
+                class="bi bi-trash-fill me-2"></i>Get All Users</button>
+            <button type="button" class="btn btn-secondary rounded-0 px-5" data-bs-dismiss="modal"><i
+                class="bi bi-x-circle me-2"></i>Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- empChangePassword -->
+<div class="modal fade modal-auto-clear"  id="empChangePassword" tabindex="-1" aria-labelledby="empChangePassword" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-p">
+      <div class="modal-header">
+        <h1 class="modal-title fs-2 fw-bold font-monospace">RESET YOUR PASSWORD</h1>
+        <button type="button" class="btn-close btn-close-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="empChangePassword(emp.empUsername, emp.password, updatedEmp)">
+          <div class="col-12 my-4">
+            <label class="form-label">Employee Username</label>
+            <input [(ngModel)]="emp.empUsername" type="text" class="form-control rounded-0" name="username"
+              placeholder="Enter Username Here">
+          </div>
+          <div class="col-12 my-4">
+            <label class="form-label">Old Password</label>
+            <input [(ngModel)]="emp.password" type="password" class="form-control rounded-0" name="password"
+              placeholder="Enter Your Old Password Here">
+          </div>
+          <div class="col-12 my-4">
+            <label class="form-label">New Password</label>
+            <input [(ngModel)]="updatedEmp.password" type="password" class="form-control rounded-0" name="password"
+              placeholder="Enter Your New Password Here">
+          </div>
+          <div class="modal-footer mt-3 justify-content-center">
+            <button type="submit" class="btn btn-warning bg-p rounded-0 text-center text-light px-5" data-bs-dismiss="modal"><i
+                class="bi bi-trash-fill me-2"></i>Change Password</button>
+            <button type="button" class="btn btn-secondary rounded-0 px-5" data-bs-dismiss="modal"><i
+                class="bi bi-x-circle me-2"></i>Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- empDeactivateAccount -->
+<div class="modal fade modal-auto-clear"  id="empDeactivateAccount" tabindex="-1" aria-labelledby="empDeactivateAccount" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-p">
+      <div class="modal-header">
+        <h1 class="modal-title fs-2 fw-bold font-monospace">DEACTIVATE EMPLOYEE ACCOUNT</h1>
+        <button type="button" class="btn-close btn-close-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="empDeactivateAccount(emp.empUsername, emp.password)">
+          <div class="col-12 my-4">
+            <label class="form-label">Employee Username</label>
+            <input [(ngModel)]="emp.empUsername" type="text" class="form-control rounded-0" name="username"
+              placeholder="Enter Your Username Here">
+          </div>
+          <div class="col-12 my-4">
+            <label class="form-label">Employee Password</label>
+            <input [(ngModel)]="emp.password" type="password" class="form-control rounded-0" name="password"
+              placeholder="Enter Your Password Here">
+          </div>
+
+          <div class="modal-footer mt-3 justify-content-center">
+            <button type="button" class="btn btn-secondary rounded-0 px-5" data-bs-dismiss="modal"><i
+              class="bi bi-x-circle me-2"></i>Cancel</button>
+            <button type="submit" class="btn btn-danger bg-p rounded-0 text-center text-light px-5" data-bs-dismiss="modal"><i
+                class="bi bi-trash-fill me-2"></i>Deactivate</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ---------------------------- MANAGER MODALS ------------------------------------- -->
+
+<!-- managerFetchAllUsers -->
+<div class="modal fade modal-auto-clear"  id="managerFetchAllUsers" tabindex="-1" aria-labelledby="managerFetchAllUsers" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-p">
+      <div class="modal-header">
+        <h1 class="modal-title fs-2 fw-bold font-monospace">GET ALL BANK USERS</h1>
+        <button type="button" class="btn-close btn-close-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="managerFetchAllUsers(manager.managerUsername, manager.password)">
+          <div class="col-12 my-4">
+            <label class="form-label">Manager Username</label>
+            <input [(ngModel)]="emp.empUsername" type="text" class="form-control rounded-0" name="username"
+              placeholder="Enter Username Here">
+          </div>
+          <div class="col-12 my-4">
+            <label class="form-label">Manager Password</label>
+            <input [(ngModel)]="manager.password" type="password" class="form-control rounded-0" name="password"
+              placeholder="Enter Password Here">
+          </div>
+          <div class="modal-footer mt-3 justify-content-center">
+            <button type="submit" class="btn btn-info bg-p rounded-0 text-center text-light px-5" data-bs-dismiss="modal"><i
+                class="bi bi-trash-fill me-2"></i>Get All Users</button>
+            <button type="button" class="btn btn-secondary rounded-0 px-5" data-bs-dismiss="modal"><i
+                class="bi bi-x-circle me-2"></i>Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- managerFetchUser -->
+<div class="modal fade modal-auto-clear"  id="managerFetchAllUser" tabindex="-1" aria-labelledby="managerFetchAllUser" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-p">
+      <div class="modal-header">
+        <h1 class="modal-title fs-2 fw-bold font-monospace">GET ALL BANK USERS</h1>
+        <button type="button" class="btn-close btn-close-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="managerFetchAllUsers(manager.managerUsername, manager.password)">
+          <div class="col-12 my-4">
+            <label class="form-label">Manager Username</label>
+            <input [(ngModel)]="emp.empUsername" type="text" class="form-control rounded-0" name="username"
+              placeholder="Enter Username Here">
+          </div>
+          <div class="col-12 my-4">
+            <label class="form-label">Manager Password</label>
+            <input [(ngModel)]="manager.password" type="password" class="form-control rounded-0" name="password"
+              placeholder="Enter Password Here">
+          </div>
+          <div class="modal-footer mt-3 justify-content-center">
+            <button type="submit" class="btn btn-info bg-p rounded-0 text-center text-light px-5" data-bs-dismiss="modal"><i
+                class="bi bi-trash-fill me-2"></i>Get All Users</button>
+            <button type="button" class="btn btn-secondary rounded-0 px-5" data-bs-dismiss="modal"><i
+                class="bi bi-x-circle me-2"></i>Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- getEmpByManager -->
+<div class="modal fade modal-auto-clear"  id="getEmpByManager" tabindex="-1" aria-labelledby="getEmpByManager" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-p">
+      <div class="modal-header">
+        <h1 class="modal-title fs-2 fw-bold font-monospace">GET BANK EMPLOYEE DETAIL</h1>
+        <button type="button" class="btn-close btn-close-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="getEmpByManager(manager.managerUsername, manager.password, emp.empUsername)">
+          <div class="col-12 my-4">
+            <label class="form-label">Manager Username</label>
+            <input [(ngModel)]="manager.managerUsername" type="text" class="form-control rounded-0" name="username"
+              placeholder="Enter Manager Username Here">
+          </div>
+          <div class="col-12 my-4">
+            <label class="form-label">Manager Password</label>
+            <input [(ngModel)]="manager.password" type="password" class="form-control rounded-0" name="password"
+              placeholder="Enter Manager Password Here">
+          </div>
+          <div class="col-12 my-4">
+            <label class="form-label">Employee Username</label>
+            <input [(ngModel)]="emp.empUsername" type="text" class="form-control rounded-0" name="username"
+              placeholder="Enter Targeted Employee Username Here">
+          </div>
+          <div class="modal-footer mt-3 justify-content-center">
+            <button type="submit" class="btn btn-info bg-p rounded-0 text-center text-light px-5" data-bs-dismiss="modal"><i
+                class="bi bi-trash-fill me-2"></i>Get Detail</button>
+            <button type="button" class="btn btn-secondary rounded-0 px-5" data-bs-dismiss="modal"><i
+                class="bi bi-x-circle me-2"></i>Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- managerFetchAllEmps -->
+<div class="modal fade modal-auto-clear"  id="managerFetchAllEmps" tabindex="-1" aria-labelledby="managerFetchAllEmps" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-p">
+      <div class="modal-header">
+        <h1 class="modal-title fs-2 fw-bold font-monospace">GET ALL BANK EMPLOYEES</h1>
+        <button type="button" class="btn-close btn-close-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="managerFetchAllEmps(manager.managerUsername, manager.password)">
+          <div class="col-12 my-4">
+            <label class="form-label">Manager Username</label>
+            <input [(ngModel)]="manager.managerUsername" type="text" class="form-control rounded-0" name="username"
+              placeholder="Enter Username Here">
+          </div>
+          <div class="col-12 my-4">
+            <label class="form-label">Manager Password</label>
+            <input [(ngModel)]="manager.password" type="password" class="form-control rounded-0" name="password"
+              placeholder="Enter Password Here">
+          </div>
+          <div class="modal-footer mt-3 justify-content-center">
+            <button type="submit" class="btn btn-info bg-p rounded-0 text-center text-light px-5" data-bs-dismiss="modal"><i
+                class="bi bi-trash-fill me-2"></i>Get All Employees</button>
+            <button type="button" class="btn btn-secondary rounded-0 px-5" data-bs-dismiss="modal"><i
+                class="bi bi-x-circle me-2"></i>Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- managerChangePassword -->
+<div class="modal fade modal-auto-clear"  id="managerChangePassword" tabindex="-1" aria-labelledby="managerChangePassword" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-p">
+      <div class="modal-header">
+        <h1 class="modal-title fs-2 fw-bold font-monospace">RESET YOUR PASSWORD</h1>
+        <button type="button" class="btn-close btn-close-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="managerChangePassword(manager.managerUsername, manager.managerUsername, updatedManager)">
+          <div class="col-12 my-4">
+            <label class="form-label">Manager Username</label>
+            <input [(ngModel)]="manager.managerUsername" type="text" class="form-control rounded-0" name="username"
+              placeholder="Enter Username Here">
+          </div>
+          <div class="col-12 my-4">
+            <label class="form-label">Old Password</label>
+            <input [(ngModel)]="manager.managerUsername" type="password" class="form-control rounded-0" name="password"
+              placeholder="Enter Your Old Password Here">
+          </div>
+          <div class="col-12 my-4">
+            <label class="form-label">New Password</label>
+            <input [(ngModel)]="updatedManager.password" type="password" class="form-control rounded-0" name="password"
+              placeholder="Enter Your New Password Here">
+          </div>
+          <div class="modal-footer mt-3 justify-content-center">
+            <button type="submit" class="btn btn-warning bg-p rounded-0 text-center text-light px-5" data-bs-dismiss="modal"><i
+                class="bi bi-trash-fill me-2"></i>Change Password</button>
+            <button type="button" class="btn btn-secondary rounded-0 px-5" data-bs-dismiss="modal"><i
+                class="bi bi-x-circle me-2"></i>Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- managerDeactivateAccount -->
+<div class="modal fade modal-auto-clear"  id="managerDeactivateAccount" tabindex="-1" aria-labelledby="managerDeactivateAccount" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-p">
+      <div class="modal-header">
+        <h5 class="modal-title fs-3 fw-bold font-monospace">DEACTIVATE MANAGER ACCOUNT</h5>
+        <button type="button" class="btn-close btn-close-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="managerDeactivateAccount(manager.managerUsername, manager.password)">
+          <div class="col-12 my-4">
+            <label class="form-label">Manager Username</label>
+            <input [(ngModel)]="manager.managerUsername" type="text" class="form-control rounded-0" name="username"
+              placeholder="Enter Your Username Here">
+          </div>
+          <div class="col-12 my-4">
+            <label class="form-label">Manager Password</label>
+            <input [(ngModel)]="manager.password" type="password" class="form-control rounded-0" name="password"
+              placeholder="Enter Your Password Here">
+          </div>
+
+          <div class="modal-footer mt-3 justify-content-center">
+            <button type="button" class="btn btn-secondary rounded-0 px-5" data-bs-dismiss="modal"><i
+              class="bi bi-x-circle me-2"></i>Cancel</button>
+            <button type="submit" class="btn btn-danger bg-p rounded-0 text-center text-light px-5" data-bs-dismiss="modal"><i
+                class="bi bi-trash-fill me-2"></i>Deactivate</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- managerDeactivateEmp -->
+<div class="modal fade modal-auto-clear"  id="managerDeactivateEmp" tabindex="-1" aria-labelledby="managerDeactivateEmp" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-p">
+      <div class="modal-header">
+        <h4 class="modal-title fs-3 fw-bold font-monospace">DEACTIVATE EMPLOYEE ACCOUNT</h4>
+        <button type="button" class="btn-close btn-close-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="managerDeactivateEmp(manager.managerUsername, manager.password, emp.empUsername)">
+          <div class="col-12 my-4">
+            <label class="form-label">Manager Username</label>
+            <input [(ngModel)]="manager.managerUsername" type="text" class="form-control rounded-0" name="username"
+              placeholder="Enter Your Username Here">
+          </div>
+          <div class="col-12 my-4">
+            <label class="form-label">Manager Password</label>
+            <input [(ngModel)]="manager.password" type="password" class="form-control rounded-0" name="password"
+              placeholder="Enter Your Password Here">
+          </div>
+          <div class="col-12 my-4">
+            <label class="form-label">Employee Username</label>
+            <input [(ngModel)]="emp.empUsername" type="text" class="form-control rounded-0" name="username"
+              placeholder="Enter Targeted Employee Username Here">
+          </div>
+
+          <div class="modal-footer mt-3 justify-content-center">
+            <button type="button" class="btn btn-secondary rounded-0 px-5" data-bs-dismiss="modal"><i
+              class="bi bi-x-circle me-2"></i>Cancel</button>
+            <button type="submit" class="btn btn-danger bg-p rounded-0 text-center text-light px-5" data-bs-dismiss="modal"><i
+                class="bi bi-trash-fill me-2"></i>Deactivate</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- managerDeactivateUser -->
+<div class="modal fade modal-auto-clear"  id="managerDeactivateUser" tabindex="-1" aria-labelledby="managerDeactivateUser" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-p">
+      <div class="modal-header">
+        <h3 class="modal-title fs-2 fw-bold font-monospace">DEACTIVATE USER ACCOUNT</h3>
+        <button type="button" class="btn-close btn-close-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="managerDeactivateUser(manager.managerUsername, manager.password, user.accountNo)">
+          <div class="col-12 my-4">
+            <label class="form-label">Manager Username</label>
+            <input [(ngModel)]="manager.managerUsername" type="text" class="form-control rounded-0" name="username"
+              placeholder="Enter Your Username Here">
+          </div>
+          <div class="col-12 my-4">
+            <label class="form-label">Manager Password</label>
+            <input [(ngModel)]="manager.password" type="password" class="form-control rounded-0" name="password"
+              placeholder="Enter Your Password Here">
+          </div>
+          <div class="col-12 my-4">
+            <label class="form-label">User Account Number</label>
+            <input [(ngModel)]="user.accountNo" type="text" class="form-control rounded-0" name="accountNo"
+              placeholder="Enter Targeted Account No. Here">
+          </div>
+
+          <div class="modal-footer mt-3 justify-content-center">
+            <button type="button" class="btn btn-secondary rounded-0 px-5" data-bs-dismiss="modal"><i
+              class="bi bi-x-circle me-2"></i>Cancel</button>
+            <button type="submit" class="btn btn-danger bg-p rounded-0 text-center text-light px-5" data-bs-dismiss="modal"><i
+                class="bi bi-trash-fill me-2"></i>Deactivate</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

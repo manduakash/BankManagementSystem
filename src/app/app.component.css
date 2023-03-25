@@ -1,0 +1,132 @@
+.main-body{
+    min-height: 100vh;
+    width: 100%;
+    z-index: 1;
+}
+.navbar{
+    border-bottom: 10px solid #6600FF;
+    padding-bottom: 0;
+}
+
+.nav-link{
+    border-radius: 20px 20px 0px 0px;
+    color: rgb(116, 122, 122);
+}
+
+.nav-link {
+    border-radius: 0px 0px 0px 0px;
+}
+.nav-link:hover {
+    background-color: #6600FF;
+    color: white;
+    border-radius: 0px 0px 0px 0px;
+}
+.active-link {
+    color: #6600FF;
+    font-weight: bold;
+}
+
+.dropdown-item {
+    color: #ffffff;
+}
+.dropdown-item:hover {
+    color: #6600FF;
+}
+.dropdown-item:active {
+    font-weight: bold;
+    color: #fff;
+}
+.bg-div{
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    position: fixed;
+    z-index: -10;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../assets/img/blurry-gradient-haikei (2).svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* animation for background */
+@keyframes bg-animation{
+    0%{
+        opacity: 0%;
+    }
+    25%{
+        opacity: 25%;
+    }
+    50%{
+        opacity: 50%;
+    }
+    75%{
+        opacity: 75%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+
+.bg-1{
+    z-index: -1;
+    width: 100%;
+    opacity: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: bg-animation 2s linear 8s infinite alternate-reverse;
+}
+
+.bg-2{
+    z-index: -2;
+    width: 100%;
+    opacity: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: bg-animation 2s linear 4s infinite alternate-reverse;
+}
+
+.bg-3{
+    z-index: -3;
+    width: 100%;
+    opacity: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: bg-animation 2s linear infinite alternate-reverse;
+}
+
+/* making class of heading file to use globally */
+.heading{
+    font-family: heading;
+}
+
+.highlight{
+    color: #6600FF;
+}
+
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    background-color: #212529;
+}
+
+.copyright {
+    text-align: center;
+}
+
+.designedBy-span {
+    margin-left: 80%;
+}
+
+.designedBy {
+    font-size: smaller;
+
+}

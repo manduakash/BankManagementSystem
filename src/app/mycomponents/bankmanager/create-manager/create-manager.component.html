@@ -1,0 +1,57 @@
+<div class="container bg-white rounded-0 mt-5 mb-0 py-5 px-3" id="create-manager">
+
+    <div class="font-monospace col-12">
+        <div class="heading-icon my-3 mx-auto text-center justify-content-center px-2 py-2 bg-info"><h1 class="text-center text-light fw-bolder display-5 m-2"><i class="fa-solid fa-user-shield"></i></h1></div>
+        <h2 class="font-monospace text-center text-muted fw-bolder display-5">CREATE BANK MANAGER ACCOUNT</h2>
+        <div class="underline border border-5 border-bottom border-info w-50 mx-auto"></div>
+        <div class="underline border border-2 border-bottom border-info"></div>
+    </div>
+    <form (ngSubmit)="createManager()">
+        <!-- username -->
+        <div class="row mb-3 mt-5 form-group my-3 col-10 mx-auto text-muted font-monospace">
+            <label class="col-sm-4 col-form-label"><i class="fa-solid fa-at me-1 text-p"></i>
+                Username</label>
+            <div class="col-sm-8">
+                <input [(ngModel)]="manager.managerUsername" type="text" class="form-control shadow font-monospace rounded-0"
+                name="username" placeholder="Enter Manager Username Here">
+            </div>
+        </div>
+        <!-- firstName -->
+        <div class="row mb-3 mt-5 form-group my-3 col-10 mx-auto text-muted font-monospace">
+            <label class="col-sm-4 col-form-label"><i class="fa-solid fa-id-card me-1 text-p"></i>
+                First Name </label>
+            <div class="col-sm-8">
+                <input [(ngModel)]="manager.fname" type="text" class="form-control shadow font-monospace rounded-0"
+                name="fname" placeholder="Enter Manager First Name Here">
+            </div>
+        </div>
+        <!-- lastName -->
+        <div class="row mb-3 mt-5 form-group my-3 col-10 mx-auto text-muted font-monospace">
+            <label class="col-sm-4 col-form-label"><i class="fa-regular fa-id-card me-1 text-p"></i>
+                Last Name </label>
+            <div class="col-sm-8">
+                <input [(ngModel)]="manager.lname" type="text" class="form-control shadow font-monospace rounded-0"
+                name="lname" placeholder="Enter Manager Last Name Here">
+            </div>
+        </div>
+
+        <!-- password -->
+        <div class="row mb-3 mt-5 form-group my-3 col-10 mx-auto text-muted font-monospace">
+            <label class="col-sm-4 col-form-label"><i class="fa-solid fa-lock me-1 text-p"></i>
+                Password </label>
+            <div class="col-sm-8">
+                <input [(ngModel)]="manager.password" type="password" class="form-control shadow font-monospace rounded-0"
+                name="password" placeholder="Enter Manager Password Here">
+            </div>
+        </div>
+
+
+        <div class="d-grid col-3 mx-auto my-5">
+            <button type="submit" class="font-monospace btn-shadow"><i class="fa-solid fa-user-plus me-2"></i>CREATE MANAGER ACCOUNT</button>
+        </div>
+    </form>
+</div>
+<!-- wave -->
+<div class="wave my-0 py-0 w-100"><img class="w-100" src="../../../../assets/img/wavesOpacityWhite.svg"></div>
+
+

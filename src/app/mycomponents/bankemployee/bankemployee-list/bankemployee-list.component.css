@@ -1,0 +1,14 @@
+.container-fluid{
+    height: 100vh;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+
+.alert {
+    margin-top: 70px;
+    z-index: 100;
+    left: 5vw;
+    right: 5vw;
+    width: 90vw;
+    height: 10vh;
+}

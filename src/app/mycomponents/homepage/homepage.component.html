@@ -1,0 +1,55 @@
+<div class="contaner-fluid homepage-container">
+    <!-- alert message div -->
+    <div *ngIf="isAlert" class="alert alert-{{alert.type}} alert-dismissible fade show text-center py-auto fixed-top"
+        data-auto-dismiss="2000" role="alert">
+        <p class="font-monospace"><strong class="fs-5 me-4">{{alert.head}} :</strong>{{alert.message}}</p>
+        <button (click)="closeAlert()" type="button" class="btn-close py-2 px-2 rounded-pill my-3 mx-3"
+            data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <!-- homepage pic -->
+    <div class="homepage-pic-blend"></div>
+    <div class="homepage-pic-gradient w-100">
+        <!-- heading -->
+        <h1 class="homepage-heading text-white">BANK OF <span class="text-outline">SOMEWHERE</span></h1>
+        <h1 class="homepage-subheading text-white">Everyday is a bank account, and the time is our currency.</h1>
+        <!-- cta -->
+        <div class="container cta w-100">
+            <a href="#create-user" class="btn btn-lg btn-outline-light cta1 font-monospace fw-bold"><i class="fa-solid fa-plus me-2"></i>CREATE ACCOUNT</a>
+            <a class="btn btn-lg btn-light cta2 font-monospace fw-bold" data-bs-toggle="modal" data-bs-target="#verifyUser">WITHDRAW MONEY</a>
+        </div>
+    </div>
+    <div class="homepage-pic"></div>
+    <div class="homepage-wave my-0 py-0 w-100"><img class="w-100" src="../../../assets/img/wave-haikei.svg"></div>
+
+    <!-- homepage contents -->
+    <div class="container">
+        <app-modals></app-modals>
+
+        <!-- create bank user account -->
+        <app-create-user id="create-user" class="my-2"></app-create-user>
+
+        <!-- user list component -->
+        <app-bankuser-list id="user-list" class="my-2"></app-bankuser-list>
+
+        <!-- bank user services -->
+        <app-bankuserservices id="user-services" class="my-2"></app-bankuserservices>
+
+        <!-- create bank employee account -->
+        <app-create-employee id="create-employee" class="my-2"></app-create-employee>
+
+        <!-- employee list component -->
+        <app-bankemployee-list id="employee-list" class="my-2"></app-bankemployee-list>
+
+        <!-- bank employee services -->
+        <app-bankemployeeservices id="employee-services" class="my-2"></app-bankemployeeservices>
+
+        <!-- create bank manager account -->
+        <app-create-manager id="create-manager" class="my-2"></app-create-manager>
+
+        <!-- bank manager services -->
+        <app-bankmanagerservices id="manager-services" class="my-2"></app-bankmanagerservices>
+
+    </div>
+</div>
+

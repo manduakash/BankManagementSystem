@@ -1,0 +1,15 @@
+.container{
+    box-shadow: 0px -2px 20px 1px rgba(44, 44, 44, 0.788);
+    margin-top: 100px;
+}
+
+.wave {
+    overflow: hidden;
+    height: 250px;
+    margin-bottom: 50px;
+}
+
+.heading-icon {
+    width: fit-content;
+    border-radius: 50px;
+}
